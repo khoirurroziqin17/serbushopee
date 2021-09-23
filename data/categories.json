@@ -1,0 +1,10 @@
+[
+  { "id": 1, "name": "Elektornik", "thumbnail": "/tv.png" },
+  { "id": 2, "name": "Komputer & Aksesoris", "thumbnail": "/laptop.png" },
+  { "id": 3, "name": "Handphone & Aksesoris", "thumbnail": "/handphone.png" },
+  { "id": 4, "name": "Pakaian Pria", "thumbnail": "/kemeja.png" },
+  { "id": 5, "name": "Pakaian Wanita", "thumbnail": "/dress.png" },
+  { "id": 6, "name": "Pakaian Muslimah", "thumbnail": "/gamis.png" },
+  { "id": 7, "name": "Perawatan & Kecantikan", "thumbnail": "/perawatan.png" },
+  { "id": 8, "name": "Perlengkapan Rumah", "thumbnail": "/sofa.png" }
+]

@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "category": "Pakaian Muslimah",
+    "title": "Rok Katun Flanel Klok Motif Kotak Tartan Maxi",
+    "location": "Jawa Tengah",
+    "thumbnail": "/img2.jpg",
+    "featured": false
+  },
+  {
+    "id": 2,
+    "category": "Pakaian Pria",
+    "title": "Celana Pria GANTLEMEN BOY Normal Size ARM Man Sobek Bikers Wisker Distro Softjeans Melar",
+    "location": "Jawa Barat",
+    "thumbnail": "/kemeja.png",
+    "featured": false
+  },
+  {
+    "id": 3,
+    "category": "Perawatan & Kecantikan",
+    "title": "Scarlett Whitening Body Lotion Jolly",
+    "location": "Jawa Timur",
+    "thumbnail": "/perawatan.png",
+    "featured": false
+  },
+  {
+    "id": 4,
+    "category": "Pakaian Muslimah",
+    "title": "Celana Pendek GAP Original Easy Short GAP EASY Branded Original",
+    "location": "Jawa Barat",
+    "thumbnail": "/dress.png",
+    "featured": false
+  },
+  {
+    "id": 5,
+    "category": "Komputer & Aksesoris",
+    "title": "Xiaomi Monitor Gaming 144Hz 34 inch Curved WQHD Original LED Versi China & Global",
+    "location": "DKI Jakarta",
+    "thumbnail": "/img1.jpg",
+    "featured": true
+  }
+]
