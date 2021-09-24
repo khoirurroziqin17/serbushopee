@@ -49,8 +49,19 @@ export async function getServerSideProps({ query }) {
     );
     products = await reqProducts.json();
   } else {
+    const qs = require("qs");
+    let list = [];
+    const myArr = query.title.split(" ");
+    myArr.forEach((element) => {
+      list.push({ title_contains: element });
+    });
+    // console.log(list);
+    const title = qs.stringify({
+      _where: list,
+    });
+
     const reqProductsByTitle = await fetch(
-      process.env.NEXT_PUBLIC_APIURL + "/products?title_contains=" + query.title
+      process.env.NEXT_PUBLIC_APIURL + "/products?" + title
     );
     products = await reqProductsByTitle.json();
     text = "kata kunci";
