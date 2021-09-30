@@ -4,12 +4,12 @@ import NoResult from "@components/NoResult";
 
 export async function getServerSideProps({ params: { slug } }) {
   const reqLocation = await fetch(
-    process.env.NEXT_PUBLIC_APIURL + "/locations?slug=" + slug
+    `${process.env.NEXT_PUBLIC_APIURL}/locations?slug=${slug}`
   );
   const location = await reqLocation.json();
 
   const reqLocationProducts = await fetch(
-    process.env.NEXT_PUBLIC_APIURL + "/products?location.slug=" + slug
+    `${process.env.NEXT_PUBLIC_APIURL}/products?location.slug=${slug}&_sort=updated_at:DESC`
   );
   const locationProducts = await reqLocationProducts.json();
 

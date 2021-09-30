@@ -11,41 +11,41 @@ export async function getServerSideProps({ query }) {
   let products = "";
   if (query.category && query.location) {
     const reqCategory = await fetch(
-      process.env.NEXT_PUBLIC_APIURL + "/categories?slug=" + query.category
+      `${process.env.NEXT_PUBLIC_APIURL} +/categories?slug=${query.category}`
     );
     name = await reqCategory.json();
     text = "kategori";
 
     const reqLocation = await fetch(
-      process.env.NEXT_PUBLIC_APIURL + "/locations?slug=" + query.location
+      `${process.env.NEXT_PUBLIC_APIURL} +/locations?slug=${query.location}`
     );
     nameALt = await reqLocation.json();
     textAlt = "lokasi";
 
     const reqProducts = await fetch(
-      `${process.env.NEXT_PUBLIC_APIURL}/products?category.slug=${query.category}&location.slug=${query.location}`
+      `${process.env.NEXT_PUBLIC_APIURL}/products?category.slug=${query.category}&location.slug=${query.location}&_sort=updated_at:DESC`
     );
     products = await reqProducts.json();
   } else if (query.category) {
     const reqCategory = await fetch(
-      process.env.NEXT_PUBLIC_APIURL + "/categories?slug=" + query.category
+      `${process.env.NEXT_PUBLIC_APIURL} +/categories?slug=${query.category}`
     );
     name = await reqCategory.json();
     text = "kategori";
 
     const reqProducts = await fetch(
-      `${process.env.NEXT_PUBLIC_APIURL}/products?category.slug=${query.category}`
+      `${process.env.NEXT_PUBLIC_APIURL}/products?category.slug=${query.category}&_sort=updated_at:DESC`
     );
     products = await reqProducts.json();
   } else if (query.location) {
     const reqLocation = await fetch(
-      process.env.NEXT_PUBLIC_APIURL + "/locations?slug=" + query.location
+      `${process.env.NEXT_PUBLIC_APIURL} +/locations?slug=${query.location}`
     );
     name = await reqLocation.json();
     text = "lokasi";
 
     const reqProducts = await fetch(
-      `${process.env.NEXT_PUBLIC_APIURL}/products?location.slug=${query.location}`
+      `${process.env.NEXT_PUBLIC_APIURL}/products?location.slug=${query.location}$_sort=updated_at:DESC`
     );
     products = await reqProducts.json();
   } else {
@@ -55,13 +55,12 @@ export async function getServerSideProps({ query }) {
     myArr.forEach((element) => {
       list.push({ title_contains: element });
     });
-    // console.log(list);
     const title = qs.stringify({
       _where: list,
     });
 
     const reqProductsByTitle = await fetch(
-      process.env.NEXT_PUBLIC_APIURL + "/products?" + title
+      `${process.env.NEXT_PUBLIC_APIURL}/products?${title}&_sort=updated_at:DESC`
     );
     products = await reqProductsByTitle.json();
     text = "kata kunci";

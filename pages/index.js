@@ -15,7 +15,8 @@ export async function getServerSideProps() {
   const categories = await reqCategories.json();
 
   const reqProducts = await fetch(
-    process.env.NEXT_PUBLIC_APIURL + "/products?featured=false"
+    process.env.NEXT_PUBLIC_APIURL +
+      "/products?featured=false&_sort=updated_at:DESC"
   );
   const products = await reqProducts.json();
 
